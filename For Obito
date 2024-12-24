@@ -1,0 +1,57 @@
+# Reattempting coloring by simulating more realistic regions based on user expectations.
+
+# Load the line art for editing again
+
+line_art_colored = line_art.convert("RGBA")
+
+draw = ImageDraw.Draw(line_art_colored)
+
+
+
+# Approximate areas for coloring (simplified, as detailed segmentation is not possible programmatically here)
+
+# Using the colors inspired by the reference image
+
+
+
+# Face (main skin tone)
+
+draw.rectangle([150, 200, 350, 500], fill=colors["face"], outline=None)
+
+
+
+# Left mask (yellow)
+
+draw.rectangle([50, 200, 150, 400], fill=colors["mask_left"], outline=None)
+
+
+
+# Right mask (orange)
+
+draw.rectangle([350, 200, 450, 400], fill=colors["mask_right"], outline=None)
+
+
+
+# Hair (black)
+
+draw.rectangle([150, 50, 350, 200], fill=colors["hair"], outline=None)
+
+
+
+# Eyes (red and blue)
+
+draw.ellipse([200, 250, 220, 270], fill=colors["eye_left"], outline=None)
+
+draw.ellipse([280, 250, 300, 270], fill=colors["eye_right"], outline=None)
+
+
+
+# Save and display the updated result
+
+output_path = "/mnt/data/colored_art_attempt2.png"
+
+line_art_colored.save(output_path)
+
+
+
+output_path
